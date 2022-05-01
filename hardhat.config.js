@@ -1,7 +1,8 @@
 require("@nomiclabs/hardhat-waffle");
+const dotenv = require('dotenv')
 
-// This is a sample Hardhat task. To learn how to create your own go to
-// https://hardhat.org/guides/create-task.html
+dotenv.config();
+
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   const accounts = await hre.ethers.getSigners();
 
@@ -18,4 +19,14 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  */
 module.exports = {
   solidity: "0.8.11",
+  networks: {
+    ropsten: {
+      url: process.env.API_URL,
+      accounts: [process.env.PRIVATE_KEY],
+    },
+  },
+
+  etherscan: {
+    apikey: process.env.ETHERSCAN_API_KEY,
+  },
 };

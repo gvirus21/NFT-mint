@@ -13,3 +13,5 @@ npx hardhat node
 node scripts/sample-script.js
 npx hardhat help
 ```
+
+PokemintNFT deployed to: 0xd4F60A6fFE9242109eF3903145Da8BCb6910e99b
