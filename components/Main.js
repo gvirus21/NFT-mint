@@ -46,6 +46,8 @@ const Main = ({ currentAccount, isConnected }) => {
       );
 
       try {
+          console.log(`amount: ${mintAmount}, price: ${mintPrice}, totalPrice: ${mintPrice * mintAmount}`)
+
         const mintTx = await pokeMintContract.mint(BigNumber.from(mintAmount), {
           value: ethers.utils.parseEther((mintPrice * mintAmount).toString()),
         });
@@ -56,9 +58,37 @@ const Main = ({ currentAccount, isConnected }) => {
     }
   };
 
+  const handleDecrement = () => {
+    if (mintAmount > 1) {
+      setMintAmount(mintAmount - 1);
+    }
+  };
+  const handleIncrement = () => {
+    if (mintAmount < 2) {
+      setMintAmount(mintAmount + 1);
+    }
+  };
+
   return (
     <div>
-      <button onClick={handleMint}>Mint</button>
+      <h1>PokeMint</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat nihil
+        molestiae iste. Doloremque rerum culpa laudantium optio voluptas ut
+        debitis.
+      </p>
+      {isConnected ? (
+        <div>
+          <div>
+            <button onClick={handleDecrement}>-</button>
+            <input type="number" value={mintAmount} />
+            <button onClick={handleIncrement}>+</button>
+          </div>
+          <button onClick={handleMint}> Mint </button>
+        </div>
+      ) : (
+        <div><h1>Please Connect your wallet to continue </h1></div>
+      )}
     </div>
   );
 };
