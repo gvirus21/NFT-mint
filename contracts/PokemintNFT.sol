@@ -15,12 +15,12 @@ contract PokeMintNFT is ERC721, Ownable {
     address payable withdrawWallet;
     mapping(address => uint256) walletMints;
 
-    constructor( address _withdrawAddress ) payable ERC721( 'PokeMint', 'PKM') {
+    constructor() payable ERC721( 'PokeMint', 'PKM') {
         mintPrice = 0.05 ether;
         totalSupply = 0;
         maxSupply = 10000;
         maxPerWallet = 3;
-        withdrawWallet = payable(_withdrawAddress);
+        withdrawWallet = payable(msg.sender);
 
     }
 
