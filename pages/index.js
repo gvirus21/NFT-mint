@@ -54,7 +54,11 @@ const handleReload = async () => {
         isConnected={isConnected}
         connectWallet={connectWallet}
       />
-      <Main />
+      <Main
+        currentAccount={currentAccount}
+        isConnected={isConnected}
+        
+      />
     </div>
   );
 }
