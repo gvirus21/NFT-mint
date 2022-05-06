@@ -2,7 +2,7 @@ import React from 'react';
 
 const style = {
   wrapper:
-    "flex justify-between items-center px-20 h-24 sticky top-0 z-30 bg-white ",
+    "flex justify-between items-center px-20 h-20 w-screen absolute top-0 z-30 bg-gradient-to-r from-slate-700 via-gray-700 to-slate-900 ",
   logo: "font-semibold text-2xl",
   accountLabel: "text-white bg-violet-300 px-6 py-2 rounded-full",
   button:

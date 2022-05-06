@@ -70,25 +70,39 @@ const Main = ({ currentAccount, isConnected }) => {
   };
 
   return (
-    <div>
-      <h1>PokeMint</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat nihil
-        molestiae iste. Doloremque rerum culpa laudantium optio voluptas ut
-        debitis.
-      </p>
-      {isConnected ? (
-        <div>
-          <div>
-            <button onClick={handleDecrement}>-</button>
-            <input type="number" value={mintAmount} />
-            <button onClick={handleIncrement}>+</button>
+    <div className="h-screen w-screen bg-gradient-to-r from-slate-700 via-gray-700 to-slate-900 flex-col justify-center items-center">
+      <div className="flex flex-col justify-between items-center pt-32">
+        <h1 className="text-white text-6xl font-bold my-5">PokeMint</h1>
+        <p className="text-white w-4/6 text-center my-5">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat
+          nihil molestiae iste. Doloremque rerum culpa laudantium optio voluptas
+          ut debitis.
+        </p>
+        {isConnected ? (
+          <div className="flex flex-col items-center">
+            <div className="flex items-center">
+              <button
+                onClick={handleDecrement}
+                className="bg-gray-200 mx-3 h-10 w-10 rounded-md border-0 outline-none text-xl"
+              >
+                -
+              </button>
+              <input type="number" value={mintAmount} className="h-14 rounded-lg w-20 text-center" />
+              <button
+                onClick={handleIncrement}
+                className="bg-gray-200 mx-3 h-10 w-10 rounded-md border-0 outline-none text-xl"
+              >
+                +
+              </button>
+            </div>
+            <button onClick={handleMint} className="bg-pink-600 my-7 h-10 w-32"> Mint </button>
           </div>
-          <button onClick={handleMint}> Mint </button>
-        </div>
-      ) : (
-        <div><h1>Please Connect your wallet to continue </h1></div>
-      )}
+        ) : (
+          <div>
+            <h1>Please Connect your wallet to continue </h1>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
