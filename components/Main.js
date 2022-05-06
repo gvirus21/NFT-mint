@@ -70,36 +70,39 @@ const Main = ({ currentAccount, isConnected }) => {
   };
 
   return (
-    <div className="h-screen w-screen bg-gradient-to-r from-slate-700 via-gray-700 to-slate-900 flex-col justify-center items-center">
+    <div className="h-screen w-screen bg-gradient-to-tr from-violet-500 via-pink-700 to-pink-600 flex-col justify-center items-center">
       <div className="flex flex-col justify-between items-center pt-32">
-        <h1 className="text-white text-6xl font-bold my-5">PokeMint</h1>
-        <p className="text-white w-4/6 text-center my-5">
+        <h1 className="text-white text-6xl font-bold my-5 font-mono">PokeMint</h1>
+        <p className="text-white w-4/6 my-5 text-center font-mono font-semibold">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat
           nihil molestiae iste. Doloremque rerum culpa laudantium optio voluptas
           ut debitis.
         </p>
         {isConnected ? (
           <div className="flex flex-col items-center">
-            <div className="flex items-center">
+            <div className="flex items-center mt-10">
               <button
                 onClick={handleDecrement}
-                className="bg-gray-200 mx-3 h-10 w-10 rounded-md border-0 outline-none text-xl"
+                className="bg-pink-800 hover:bg-pink-900 text-white mx-3 h-10 w-10 rounded-md border-0 outline-none text-xl"
               >
                 -
               </button>
               <input
                 type="number"
                 value={mintAmount}
-                className="h-14 rounded-lg w-20 text-center focus:outline-none focus:appearance-none	"
+                className="h-14 rounded-lg w-20 text-center focus:outline-none bg-slate-100 text-3xl text-pink-800"
               />
               <button
                 onClick={handleIncrement}
-                className="bg-gray-200 mx-3 h-10 w-10 rounded-md border-0 outline-none text-xl"
+                className="bg-pink-800 hover:bg-pink-900 text-white font-bold mx-3 h-10 w-10 rounded-md border-0 outline-none text-xl"
               >
                 +
               </button>
             </div>
-            <button onClick={handleMint} className="bg-pink-600 my-7 h-10 w-32">
+            <button
+              onClick={handleMint}
+              className="bg-pink-800 my-7 h-10 w-32 rounded-md text-white tracking-wider hover:bg-pink-900"
+            >
               {" "}
               Mint{" "}
             </button>
