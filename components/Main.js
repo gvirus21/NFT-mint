@@ -87,7 +87,11 @@ const Main = ({ currentAccount, isConnected }) => {
               >
                 -
               </button>
-              <input type="number" value={mintAmount} className="h-14 rounded-lg w-20 text-center" />
+              <input
+                type="number"
+                value={mintAmount}
+                className="h-14 rounded-lg w-20 text-center focus:outline-none focus:appearance-none	"
+              />
               <button
                 onClick={handleIncrement}
                 className="bg-gray-200 mx-3 h-10 w-10 rounded-md border-0 outline-none text-xl"
@@ -95,7 +99,10 @@ const Main = ({ currentAccount, isConnected }) => {
                 +
               </button>
             </div>
-            <button onClick={handleMint} className="bg-pink-600 my-7 h-10 w-32"> Mint </button>
+            <button onClick={handleMint} className="bg-pink-600 my-7 h-10 w-32">
+              {" "}
+              Mint{" "}
+            </button>
           </div>
         ) : (
           <div>
