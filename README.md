@@ -1,17 +1,11 @@
-# Basic Sample Hardhat Project
+# PokeMint
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+- PokeMint is a Pokemon themed NFT Minting website
+- User can come, connect their wallet, then select number of NFTs they want to mint and simply Mint
+- Then They can sign the transaction, & BOOM! They have minted successfully 🎉
 
-Try running some of the following tasks:
+![pokemint](https://user-images.githubusercontent.com/69251030/167240219-f47e4d8a-6a8a-4a0c-a108-9b90bd7466c6.png)
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+
 ```
-
 PokemintNFT deployed to: 0xd4F60A6fFE9242109eF3903145Da8BCb6910e99b
